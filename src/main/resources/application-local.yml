@@ -1,0 +1,11 @@
+quarkus:
+   datasource:
+      db-kind: postgresql
+      username: booksuser
+      password: uDkeuRMJB4R2bPNVqjhA
+      jdbc:
+         url: jdbc:postgresql://localhost:50994/books
+
+   liquibase:
+      migrate-at-start: true
+      change-log: db/liquibase-changelog.yml

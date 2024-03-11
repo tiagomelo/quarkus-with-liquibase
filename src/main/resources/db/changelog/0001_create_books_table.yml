@@ -1,0 +1,34 @@
+databaseChangeLog:
+-  changeSet:
+      author: Tiago Melo
+      id: creates_books_table
+      changes:
+      -  createTable:
+            tableName: books
+            columns:
+            -  column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                     primaryKey: true
+            -  column:
+                  name: title
+                  type: VARCHAR(255)
+                  constraints:
+                     nullable: false
+            -  column:
+                  name: author
+                  type: VARCHAR(255)
+                  constraints:
+                     nullable: false
+            -  column:
+                  name: pages
+                  type: INTEGER
+                  constraints:
+                     nullable: false
+
+      -  addUniqueConstraint:
+            columnNames: title, author
+            constraintName: books_title_author_unique
+            tableName: books

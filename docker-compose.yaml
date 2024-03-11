@@ -1,0 +1,14 @@
+version: '3.8'
+services:
+   books_psql_db:
+      image: postgres
+      container_name: books_db
+      restart: always
+      env_file:
+      - .env-local
+      ports:
+      - 50994:5432
+      volumes:
+      - books_psql_db_data:/var/lib/postgresql/data
+volumes:
+   books_psql_db_data:
